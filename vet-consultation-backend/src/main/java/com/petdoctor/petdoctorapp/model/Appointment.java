@@ -29,15 +29,20 @@ public class Appointment {
 
 	@ManyToOne
 	@JoinColumn(name = "doctor_id")
-	private User doctor;
+	private User doctorId;
 
+	@Column(name = "pet_Type", nullable = false)
+	private String petType;
+	
+	@Column(name = "consultation_Type", nullable = false)
 	private String consultationType;
 
-	@Column(nullable = false)
+	@Column(name = "appointment_time", nullable = false)
 	private LocalDateTime appointmentTime;
 
 	private String status = "pending";
 
+	@Column(name = "created_At", nullable = false)
 	private LocalDateTime createdAt = LocalDateTime.now();
 
 	// Getters and setters

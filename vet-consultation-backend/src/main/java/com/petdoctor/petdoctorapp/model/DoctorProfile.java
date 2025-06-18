@@ -27,12 +27,30 @@ public class DoctorProfile {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    private String name;
+    
+    private String email;
+    
+    private String speciality;
+    
+    private String qualification;
+    
+    private String phone;
+    
     private String specialization;
+    
+    @Column(name = "clinic_Address", nullable = false)
     private String clinicAddress;
 
     private Double latitude;
+    
     private Double longitude;
+    
+    private String city;
+    
+    private String state;
 
+    @Column(name = "consultation_Type", nullable = false)
     private String consultationType; // online, offline, both
 
     @Column(nullable = false)
@@ -40,6 +58,15 @@ public class DoctorProfile {
 
     @Column(columnDefinition = "TEXT")
     private String availability; // JSON string
+    
+    @Column(name = "online_Available", nullable = false)
+    private boolean onlineAvailable;
+    
+    @Column(name = "offline_Available", nullable = false)
+    private boolean offlineAvailable;
+
+    @Column(name = "consultation_Fee", nullable = false)
+    private double consultationFee;
 
     private Boolean approved = false;
 

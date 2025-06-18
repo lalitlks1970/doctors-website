@@ -18,16 +18,16 @@ public class UserController {
     @Autowired
     private UserRepository userRepo;
 
-    @PostMapping("/register")
+    @PostMapping("/api/auth/registerr")
     public User register(@RequestBody User user) {
         // Optionally: hash password before saving (we’ll add this soon)
         return userRepo.save(user);
     }
 
-    @PostMapping("/login")
+    @PostMapping("/api/auth/login")
     public String login(@RequestBody User loginData) {
         Optional<User> user = userRepo.findByEmail(loginData.getEmail());
-        if (user.isPresent() && user.get().getPasswordHash().equals(loginData.getPasswordHash())) {
+        if ( user.get().getPassword().equals(loginData.getPassword())) {
             return "Login successful"; // Replace with token later
         } else {
             return "Invalid email or password";

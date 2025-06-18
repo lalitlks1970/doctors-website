@@ -27,14 +27,17 @@ public class Payment {
 	@OneToOne
 	@JoinColumn(name = "appointment_id")
 	private Appointment appointment;
+	
+	@Column(name = "transaction_Id", nullable = false)
+	private String transactionId;
 
 	@Column(nullable = false)
-	private BigDecimal amount;
+	private double amount;
 
+	@Column(name = "payment_Status", nullable = false)
 	private String paymentStatus = "initiated";
 
-	private String paymentGatewayRef;
-
+	@Column(name = "created_At", nullable = false)
 	private LocalDateTime createdAt = LocalDateTime.now();
 
 	// Getters and setters
