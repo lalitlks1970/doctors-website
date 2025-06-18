@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import styles from "./DoctorList.module.css";
 
 const DoctorList = () => {
   const [doctors, setDoctors] = useState([]);
@@ -11,22 +12,24 @@ const DoctorList = () => {
   }, []);
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Available Doctors</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {doctors.map((doc) => (
-          <div key={doc.id} className="p-4 border rounded shadow">
-            <h2 className="text-xl font-semibold">{doc.name}</h2>
-            <p>Speciality: {doc.speciality}</p>
-            <p>Location: {doc.location}</p>
-            <button
-              onClick={() => alert(`Book appointment with ${doc.name}`)}
-              className="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-            >
-              Book Appointment
-            </button>
-          </div>
-        ))}
+    <div className={styles.doctorListContainer}>
+      <div className={styles.doctorListCard}>
+        <h1 className={styles.doctorListTitle}>Available Doctors</h1>
+        <div className={styles.doctorsGrid}>
+          {doctors.map((doc) => (
+            <div key={doc.id} className={styles.doctorCard}>
+              <h2 className={styles.doctorName}>{doc.name}</h2>
+              <p className={styles.doctorDetail}>Speciality: {doc.speciality}</p>
+              <p className={styles.doctorDetail}>Location: {doc.location}</p>
+              <button
+                onClick={() => alert(`Book appointment with ${doc.name}`)}
+                className={styles.bookButton}
+              >
+                Book Appointment
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

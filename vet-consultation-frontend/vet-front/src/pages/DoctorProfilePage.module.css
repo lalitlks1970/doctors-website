@@ -1,0 +1,57 @@
+.profileContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e0f2ff 0%, #a5c8ff 100%);
+  padding: 2rem;
+}
+
+.profileCard {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2.5rem;
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  width: 100%;
+  max-width: 36rem;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.profileCard:hover {
+  box-shadow: 0 12px 40px rgba(31, 38, 135, 0.2);
+}
+
+.profileTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.profileDetail {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+.profileInfo {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 1rem;
+}
+
+.profileInfoTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 0.75rem;
+}
+
+.profileInfoDetail {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
