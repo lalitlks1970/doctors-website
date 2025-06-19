@@ -16,7 +16,7 @@ const RegisterPage = () => {
     setLoading(true);
     setError("");
     try {
-      await axios.post("http://localhost:8080/api/auth/register", {
+      await axios.post("http://localhost:8084/api/auth/register", {
         email,
         password,
       });

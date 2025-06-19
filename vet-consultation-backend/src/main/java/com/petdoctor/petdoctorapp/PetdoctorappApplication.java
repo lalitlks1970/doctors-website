@@ -1,27 +1,19 @@
 package com.petdoctor.petdoctorapp;
-
-import java.sql.Connection;
-
-import javax.sql.DataSource;
-
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class PetdoctorappApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(PetdoctorappApplication.class, args);
-	}
-    @Bean
-    public CommandLineRunner logConnection(DataSource dataSource) {
-        return args -> {
-            try (Connection conn = dataSource.getConnection()) {
-                System.out.println("✅ Connected to DB URL: " + conn.getMetaData().getURL());
-                System.out.println("🔌 Driver: " + conn.getMetaData().getDriverName());
+    public static void main(String[] args) {
+        ConfigurableApplicationContext context = SpringApplication.run(PetdoctorappApplication.class, args);
+
+        System.out.println("🔍 Beans in context:");
+        for (String name : context.getBeanDefinitionNames()) {
+            if (name.toLowerCase().contains("usercontroller")) {
+                System.out.println("✅ FOUND: " + name);
             }
-        };
-}
+        }
+    }
 }

@@ -13,7 +13,7 @@ const BookAppointment = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post("http://localhost:8080/api/appointments", {
+      await axios.post("http://localhost:8084/api/appointments", {
         doctorId,
         date,
       });
