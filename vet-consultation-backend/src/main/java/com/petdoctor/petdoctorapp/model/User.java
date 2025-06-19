@@ -20,37 +20,37 @@ public class User {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "full_Name", nullable = false)
+    @Column(name = "full_Name")
     private String fullName;
 
-    @Column(nullable = false, unique = true)
+  
     private String email;
 
-    @Column(nullable = false, unique = true)
+   
     private String phone;
 
-    @Column(name = "password", nullable = false)
+
     private String password;
 
-    @Column(name = "user_Type", nullable = false)
+    @Column(name = "user_Type")
     private String userType; // doctor or user
 
-    @Column(name = "created_At", nullable = false)
+    @Column(name = "created_At")
     private LocalDateTime createdAt = LocalDateTime.now();
     
-    @Column(name = "city", nullable = false)
+    @Column(name = "city")
     private String city;
     
-    @Column(name = "state", nullable = false)
+    @Column(name = "state")
     private String state;
 
 	public Object getPassword() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	public String getEmail() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

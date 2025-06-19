@@ -21,7 +21,7 @@ const HomePage = () => {
   useEffect(() => {
     setLoading(true);
     setError(null);
-    axios.get('http://localhost:8080/api/doctors/all')
+    axios.get('http://localhost:8084/api/doctors/all')
       .then(res => {
         setDoctors(res.data);
       })

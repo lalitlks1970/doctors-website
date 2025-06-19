@@ -12,7 +12,7 @@ export default function DoctorProfilePage() {
   useEffect(() => {
     setLoading(true);
     setError(null);
-    axios.get(`http://localhost:8080/api/doctors/${id}`)
+    axios.get(`http://localhost:8084/api/doctors/${id}`)
       .then((res) => {
         setDoctor(res.data);
       })
